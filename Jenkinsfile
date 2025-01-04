@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git changelog: false, poll: false, url: 'https://github.com/sarkarp24/cluster-sample-app.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/sarkarp24/cluster-sample-app.git'
                 sh 'docker --version'
             }
         }
