@@ -1,19 +1,19 @@
 pipeline {
     agent any
     environment {
-        REACT_APP_VERSION = "1.0.$BUILD_ID"
+        REACT_APP_VERSION = "latest"
         AWS_DEFAULT_REGION = 'us-west-2'
         IMAGE_REG = "docker.io"
         IMAGE_REPO = "prodyotsarkar/python-demoapp"
         IMAGE_TAG = "latest"
-        AWS_APP_NAME = "python_hello_world"
+        AWS_APP_NAME = "cluster-sample-app"
         AWS_REGISTRY = '762233725823.dkr.ecr.us-west-2.amazonaws.com'
     }
 
     stages {
         stage('Git Checkout') {
             steps {
-                git changelog: false, poll: false, url: 'https://github.com/sarkarp24/Python_Hello_World.git'
+                git changelog: false, poll: false, url: 'https://github.com/sarkarp24/cluster-sample-app.git'
                 sh 'docker --version'
             }
         }
