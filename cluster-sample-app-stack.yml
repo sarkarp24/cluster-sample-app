@@ -1,3 +1,4 @@
+#https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/deploy-a-clustered-application-to-amazon-ecs-by-using-aws-copilot.html
 AWSTemplateFormatVersion: "2010-09-09"
 Description: CloudFormation template for the clustered sample app
 Parameters:
