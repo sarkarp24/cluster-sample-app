@@ -3,6 +3,7 @@ Description: CloudFormation template for the clustered sample app
 Parameters:
   Image:
     Type: String
+    Default: 762233725823.dkr.ecr.us-west-2.amazonaws.com/cluster-sample-app:latest
   ServiceName:
     Type: String
     Default: demo
@@ -26,7 +27,7 @@ Parameters:
   # target CPU utilization (%)
   AutoScalingTargetValue:
     Type: Number
-    Default: 50
+    Default: 5
 Resources:
 
   # A VPC for this application
@@ -251,8 +252,8 @@ Resources:
       - AttributeName: "NODE_ID"
         KeyType: "HASH"
       ProvisionedThroughput:
-        ReadCapacityUnits: 5
-        WriteCapacityUnits: 5
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
       TableName: "CLUSTER_SAMPLE_APP_NODE"
 
   # The ECS Cluster
